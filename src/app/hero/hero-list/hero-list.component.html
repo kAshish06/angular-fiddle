@@ -1,0 +1,15 @@
+<div>
+  <div *ngFor="let hero of heros1; let i = index; let odd = odd">
+    <a [routerLink]="['/hero-detail', hero.id]">
+      {{ i + 1 }}. {{ hero.name }}
+    </a>
+  </div>
+  <hr />
+  <div *ngFor="let hero of heros2; let i = index; let odd = odd">
+    <a (click)="navigateToHeroDetail(hero)">
+      {{ hero.id + 1 }}. {{ hero.name }}
+    </a>
+  </div>
+  <hr />
+  <button (click)="navigateToCrisisList()">Crisis List</button>
+</div>
